@@ -29,10 +29,6 @@ dependencies:
   # Gráficas Financieras Interactivas (Tendencia y Proyección)
   fl_chart: ^0.68.0
 
-  # Portapapeles y Haptic Feedback del Sistema
-  flutter/services:
-    sdk: flutter
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -40,6 +36,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/icons/
-

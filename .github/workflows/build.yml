@@ -2,15 +2,6 @@ name: Build Mobile Apps (Android & iOS)
 
 on:
   workflow_dispatch:
-    inputs:
-      build_type:
-        description: 'Tipo de compilación'
-        required: true
-        default: 'release'
-        type: choice
-        options:
-          - release
-          - debug
   push:
     tags:
       - 'v*'
@@ -35,9 +26,11 @@ jobs:
       - name: Configurar Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.x'
           channel: 'stable'
           cache: true
+
+      - name: Generar scaffolding nativo de plataformas
+        run: flutter create --org com.carlitos --project-name valo_mobile .
 
       - name: Instalar dependencias
         run: flutter pub get
@@ -53,26 +46,23 @@ jobs:
           retention-days: 14
 
   # ==========================================
-  # 🍏 COMPILACIÓN iOS (IPA CON WIDGETS)
+  # 🍏 COMPILACIÓN iOS (IPA)
   # ==========================================
   build-ios:
     name: Build iOS IPA (Unsigned / Sideloading)
-    runs-on: macos-14
+    runs-on: macos-latest
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
 
-      - name: Configurar Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '15.4'
-
       - name: Configurar Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.x'
           channel: 'stable'
           cache: true
+
+      - name: Generar scaffolding nativo de plataformas
+        run: flutter create --org com.carlitos --project-name valo_mobile .
 
       - name: Instalar dependencias
         run: flutter pub get
@@ -93,4 +83,3 @@ jobs:
           name: valo-ios-release
           path: Valo-iOS-Release.ipa
           retention-days: 14
-
