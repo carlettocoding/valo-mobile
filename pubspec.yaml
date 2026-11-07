@@ -1,7 +1,7 @@
 name: valo_mobile
 description: "Valo Mobile - Conversor de Divisas y Analítica Cambiaria para Android e iOS con soporte para Widgets"
 publish_to: "none"
-version: 0.1.0+1
+version: 1.8.1+1
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -12,7 +12,6 @@ dependencies:
 
   # Utilidades de UI y estilos
   cupertino_icons: ^1.0.8
-  google_fonts: ^6.2.1
 
   # Comunicación con Widgets Nativos (iOS WidgetKit y Android AppWidget)
   home_widget: ^0.7.0
@@ -33,6 +32,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#0B0F19"
+  adaptive_icon_foreground: "assets/icon/icon.png"
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icon/icon.png
