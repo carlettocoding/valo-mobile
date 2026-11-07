@@ -1,0 +1,44 @@
+# Archivos de entorno y compilación de Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+
+# Android
+.gradle/
+local.properties
+**/android/**/gradle-wrapper.jar
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+
+# iOS
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/DerivedData/
+**/ios/**/Pods/
+**/ios/**/GeneratedPluginRegistrant.h
+**/ios/**/GeneratedPluginRegistrant.m
+**/ios/**/.symbols
+**/ios/**/.archive
+**/ios/**/Flutter/App.framework
+**/ios/**/Flutter/Flutter.framework
+**/ios/**/Flutter/Generated.xcconfig
+**/ios/**/Flutter/app.flx
+**/ios/**/Flutter/flutter_assets/
+*.ipa
+Payload/
+
+# Visual Studio Code & JetBrains
+.vscode/
+.idea/
+*.iml
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+
