@@ -278,7 +278,7 @@ class _HomeConverterScreenState extends State<HomeConverterScreen> {
               backgroundColor: const Color(0xFF2563EB),
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(vertical: 14),
-              shape: BorderRadius.circular(12),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             ),
             onPressed: _copiarMontoBancario,
           ),

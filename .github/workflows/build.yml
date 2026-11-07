@@ -67,19 +67,12 @@ jobs:
       - name: Instalar dependencias
         run: flutter pub get
 
-      - name: Compilar iOS Bundle (sin firmar)
-        run: flutter build ios --release --no-codesign
-
-      - name: Empaquetar como archivo .IPA
-        run: |
-          mkdir -p Payload
-          cp -r build/ios/iphoneos/Runner.app Payload/
-          zip -r Valo-iOS-Release.ipa Payload
-          rm -rf Payload
+      - name: Compilar iOS IPA (sin firmar)
+        run: flutter build ipa --release --no-codesign
 
       - name: Subir IPA como artefacto
         uses: actions/upload-artifact@v4
         with:
           name: valo-ios-release
-          path: Valo-iOS-Release.ipa
+          path: build/ios/ipa/*.ipa
           retention-days: 14
